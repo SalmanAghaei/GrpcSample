@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcSample";
+package customer;
+
+service Customer{
+	rpc GetCustomers(CustomerInput) returns (CustomerList);
+}
+
+message CustomerInput{ }
+
+message CustomerList{
+	repeated CustomerModel customers=1;
+}
+message CustomerModel{
+	string id=1;
+	string name=2;
+}
